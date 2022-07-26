@@ -1,26 +1,33 @@
 # Terraform env setup
-### Overview
+## Overview
 Install environment level resources such as EC2.
 
-### Preparation
+
+## Preparation
+
+```
 Update the file terraform-config/prod/us-east-1/region.tfvars using the outputs of the account setup
-### Setup
-Get the backend details
+```
 
-#### cd terraform-env-setup
-
-#### cat ../terraform-backend-setup/backend.tf-env-prod1-generated | egrep  'bucket|dynamodb_table'
+## Setup
+1. Get the backend details  
+```
+cd terraform-env-setup
+cat ../terraform-backend-setup/backend.tf-env-prod1-generated | egrep  'bucket|dynamodb_table'
+```
 
 run the following command with the output from above, for example:
-
+```
 ti $TF_INIT_PARAMS
+```
 
-Apply the changes following commands:
-
+2. Apply the changes following commands: 
+```
 ta
+```
 
-Destroy
-
-Run the following commands:
-
+## Destroy 
+Run the following commands: 
+```
 td
+```
